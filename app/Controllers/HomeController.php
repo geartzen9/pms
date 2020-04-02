@@ -9,7 +9,10 @@ namespace App\Controllers;
  */
 class HomeController extends BaseController
 {
-    public function index()
+    /**
+     * Render the home page.
+     */
+    public function index(): void
     {
         $this->render('index');
     }
