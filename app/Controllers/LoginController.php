@@ -4,16 +4,16 @@
 namespace App\Controllers;
 
 /**
- * Class HomeController
+ * Class LoginController
  * @package App\Controllers
  */
-class HomeController extends BaseController
+class LoginController extends BaseController
 {
     /**
      * Render the home page.
      */
     public function index(): void
     {
-        $this->render('index', ["title" => "Startpagina"]);
+        $this->render('login', ["title" => "Inloggen"]);
     }
 }

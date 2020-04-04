@@ -1,0 +1,25 @@
+body, html {
+    background: url("../img/background.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+h1, p, label, ::placeholder {
+    color: white;
+}
+
+input[type=text], input[type=password] {
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    padding: 5px;
+}
+
+form > div {
+    text-align: center;
+}
+
+.content-container {
+    overflow: auto;
+    height: 100%;
+}
