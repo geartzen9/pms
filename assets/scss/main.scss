@@ -1,0 +1,20 @@
+// Override default bootstrap variables.
+@import 'custom-variables';
+
+// Import the needed components of Bootstrap.
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/images';
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/spacing";
+@import "~bootstrap/scss/utilities/text";
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/forms';
+
+// Custom Sass.
+@import 'app';

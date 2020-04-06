@@ -1,5 +1,5 @@
 body, html {
-    background: url("../img/background.jpg") no-repeat center center;
+    background: url("/assets/img/background.jpg") no-repeat center center;
     background-size: cover;
     height: 100%;
 }
@@ -22,4 +22,8 @@ form > div {
 .content-container {
     overflow: auto;
     height: 100%;
+}
+
+.btn {
+    border: $btn-border-width solid white;
 }
