@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="navbar-brand text-white p-2" href="#">
+        {% if back_button is not defined %}
+            <i onclick="window.history.back();" class="fas fa-arrow-left h4 m-0"></i>
+        {% else %}
+            <i class="fas fa-bars h4 m-0"></i>
+        {% endif %}
+
+        <span class="h4 font-weight-bold mx-3">{{ title }}</span>
+    </div>
+</nav>

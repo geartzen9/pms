@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for user in users %}
+        <li class="list-group-item">{% if checkboxes == true %}<input type="checkbox">{% elseif ranking == true %}{{ user.ranking }}.{% endif %} {{ user.name }}{% if ranking == true %}<span class="float-right">{{ user.score }} punten</span>{% endif %}</li>
+    {% endfor %}
+</ul>

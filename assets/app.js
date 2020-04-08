@@ -1,3 +1,2 @@
-const scss = require('./scss/main.scss');
-
-console.log("Testing");
+require('./scss/main.scss');
+require('bootstrap');

@@ -1,0 +1,5 @@
+@include media-breakpoint-down(sm) {
+    .btn, input[type=text], input[type=email], input[type=password] {
+        width: 100%;
+    }
+}

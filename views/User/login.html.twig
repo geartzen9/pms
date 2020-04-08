@@ -1,0 +1,36 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    {# {% include 'parts/modal.html.twig' with {'modal_title': 'Persoon Toevoegen', 'primary_button_text': 'Persoon Toevoegen', 'add_person': true} %} #}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="mt-5 mx-auto d-block img-fluid logo" src="../assets/img/logo.png" alt="Logo" />
+                <h1 class="text-center font-weight-bold my-4 h2">Inloggen</h1>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <form method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="Gebruikersnaam">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" placeholder="Wachtwoord">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mx-auto d-block">Inloggen</button>
+                </form>
+            </div>
+        </div>
+        
+        {# <hr> #}
+
+        {# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch modal
+        </button> #}
+    </div>
+{% endblock %}

@@ -14,6 +14,9 @@ class HomeController extends BaseController
      */
     public function index(): void
     {
-        $this->render('index', ["title" => "Startpagina"]);
+        $this->render('index', [
+            "title" => "Startpagina",
+            "header" => false
+        ]);
     }
 }

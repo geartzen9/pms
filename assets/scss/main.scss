@@ -10,11 +10,16 @@
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/utilities/display";
 @import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/float";
 @import "~bootstrap/scss/utilities/spacing";
 @import "~bootstrap/scss/utilities/text";
 @import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/navbar';
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/modal';
 
 // Custom Sass.
 @import 'app';
+@import 'queries';
