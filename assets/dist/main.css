@@ -4648,6 +4648,9 @@ input[type=text], input[type=email], input[type=password] {
 form > div {
   text-align: center; }
 
+hr {
+  width: 50%; }
+
 .bg-img-primary {
   background: url("/assets/img/background-primary.jpg") no-repeat center center;
   background-size: cover; }
@@ -4704,6 +4707,6 @@ form > div {
   border-top: 0px; }
 
 @media (max-width: 767.98px) {
-  .btn, input[type=text], input[type=email], input[type=password] {
+  .btn, input[type=text], input[type=email], input[type=password], hr {
     width: 100%; } }
 
