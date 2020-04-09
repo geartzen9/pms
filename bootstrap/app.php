@@ -3,7 +3,7 @@
 use App\Core\Application;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-Application::bind('config', require_once 'config/app.php');
+Application::bind('config', require 'config/app.php');
 
 $capsule = new Capsule();
 $database = Application::get('config')['database'];
@@ -18,6 +18,9 @@ $capsule->addConnection([
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
 ]);
+
+//Make this Capsule instance available globally.
+$capsule->setAsGlobal();
 
 $capsule->bootEloquent();
 
