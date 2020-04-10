@@ -1,0 +1,36 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="mt-5 mx-auto d-block img-fluid logo" src="../assets/img/logo.png" alt="Logo" />
+                <h1 class="text-center font-weight-bold my-4 h2">Registreren</h1>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <form method="POST" action="/register">
+                    <div class="form-group">
+                        <input name="name" type="text" placeholder="Naam">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="email" type="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password" type="password" placeholder="Wachtwoord">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password_confirmation" type="password" placeholder="Wachtwoord confirmeren">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mx-auto d-block">Registreren</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

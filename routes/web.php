@@ -11,6 +11,7 @@ $router->get('', 'HomeController@index');
 
 // User routes
 $router->get('login', 'LoginController@index');
+$router->get('register', 'RegistrationController@index');
 
 // Admin routes.
 $router->get('admin', 'AdminController@index');
@@ -30,3 +31,4 @@ $router->get('admin/game/remove-player', 'GameController@removePlayer');
 $router->get('table', 'TableController@index');
 
 $router->post('login', 'LoginController@login');
+$router->post('register', 'RegistrationController@register');
