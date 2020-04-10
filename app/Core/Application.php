@@ -2,48 +2,75 @@
 
 namespace App\Core;
 
+use Illuminate\Container\Container;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 /**
  * Class Application
  * @package App\Core
  */
-class Application
+class Application extends Container
 {
-    /** @var array $registry */
-    protected static $registry = [];
-
     /**
-     * App constructor.
+     * Create a new Application instance.
      */
-    protected function __construct()
+    public function __construct()
     {
+        $this->registerBindings();
     }
 
-    /**
-     * The Application class should not be cloned.
-     */
-    protected function __clone()
-    {
-    }
 
     /**
-     * Bind a value into the registry.
+     * Register the basic bindings into the container.
      *
-     * @param $key
-     * @param $value
+     * @return void
      */
-    public static function bind($key, $value)
+    protected function registerBindings(): void
     {
-        static::$registry[$key] = $value;
+        static::setInstance($this);
+
+        $this->instance('app', $this);
+
+        $this->instance(Container::class, $this);
     }
 
     /**
-     * Get the value out of the registry.
-     *
-     * @param $key
-     * @return mixed
+     * @throws BindingResolutionException
      */
-    public static function get($key)
+    public function bootstrap(): void
     {
-        return static::$registry[$key];
+        $config = $this->loadConfiguration($this);
+
+        $capsule = new Capsule();
+
+        $capsule->addConnection([
+            'driver' => 'mysql',
+            'host' => $config['database']['host'],
+            'database' => $config['database']['name'],
+            'username' => $config['database']['username'],
+            'password' => $config['database']['password'],
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+        ]);
+
+        $capsule->setAsGlobal();
+
+        $capsule->bootEloquent();
+    }
+
+    /**
+     * @param Application $app
+     * @return array
+     * @throws BindingResolutionException
+     */
+    protected function loadConfiguration(Application $app): array
+    {
+        $app->bind('config', function () {
+            return require __DIR__ . '/../../config/app.php';
+        });
+
+        return $app->make('config');
     }
 }
