@@ -11,13 +11,13 @@
 
         <div class="row mt-3">
             <div class="col-md-12">
-                <form method="POST">
+                <form method="POST" action="/login">
                     <div class="form-group">
-                        <input type="text" placeholder="Gebruikersnaam">
+                        <input name="email" type="email" placeholder="Email">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" placeholder="Wachtwoord">
+                        <input name="password" type="password" placeholder="Wachtwoord">
                     </div>
 
                     <button type="submit" class="btn btn-primary mx-auto d-block">Inloggen</button>

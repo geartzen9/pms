@@ -1,7 +1,10 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'bootstrap/app.php';
+
+$app = require_once __DIR__.'/../../bootstrap/app.php';
+
+$app->bootstrap();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Schema\Blueprint;

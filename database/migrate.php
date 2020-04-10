@@ -1,3 +1,3 @@
 <?php
 
-require 'database/migrations/User.php';
+require __DIR__.'/../database/migrations/User.php';
