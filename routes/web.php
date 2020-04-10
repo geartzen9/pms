@@ -9,8 +9,8 @@ use App\Core\Router;
 // Home page route.
 $router->get('', 'HomeController@index');
 
-// User routes.
-$router->get('login', 'UserController@login');
+// User routes
+$router->get('login', 'LoginController@index');
 $router->get('register', 'UserController@register');
 
 // Admin routes.

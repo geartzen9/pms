@@ -14,9 +14,24 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends BaseController
 {
     /**
-     * Handle the login post request.
+     * Render the login page.
+     *
+     * @return void
      */
-    public function login()
+    public function index(): void
+    {
+        $this->render('User/login', [
+            "title" => "Inloggen",
+            "header" => false
+        ]);
+    }
+
+    /**
+     * Handle the login post request.
+     *
+     * @return void
+     */
+    public function login(): void
     {
         $request = [
             'email' => Request::post('email'),
