@@ -52,10 +52,12 @@ class LoginController extends BaseController
                 'email' => $validUser->email
             ]);
 
-            return redirect('/');
+            redirect('/');
+            return;
         }
 
-        return redirect('/login');
+        redirect('/login');
+        return;
     }
 
     /**
