@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 use App\Core\Request;
 use App\Core\Session;
+use App\Core\Validator;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 /**
  * Class LoginController
@@ -38,7 +38,9 @@ class LoginController extends BaseController
             'password' => Request::post('password')
         ];
 
-        $validRequest = $this->validateRequest($request, [
+        $validator = Validator::getInstance();
+
+        $validRequest = $validator->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
         ]);
@@ -77,47 +79,5 @@ class LoginController extends BaseController
         }
 
         return false;
-    }
-
-    /**
-     * Validate the request
-     *
-     * @param $request
-     * @param array $rules
-     * @return bool
-     */
-    private function validateRequest($request, array $rules): bool
-    {
-        $valid = true;
-
-        if (!empty($request) && !empty($rules)) {
-            foreach ($rules as $key => $value) {
-                if (strpos($value, '|') !== false) {
-                    $rule = explode('|', $value);
-
-                    foreach ($rule as $item) {
-                        switch ($item) {
-                            case 'required':
-                                $valid &= !empty($request[$key]);
-                                break;
-                            case 'email':
-                                $valid &= (filter_var($request[$key], FILTER_VALIDATE_EMAIL) !== false);
-                                break;
-                        }
-                    }
-                } else {
-                    switch ($value) {
-                        case 'required':
-                            $valid &= !empty($request[$key]);
-                            break;
-                        case 'email':
-                            $valid &= (filter_var($request[$key], FILTER_VALIDATE_EMAIL) !== false);
-                            break;
-                    }
-                }
-            }
-        }
-
-        return (bool)$valid;
     }
 }
