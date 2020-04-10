@@ -16,7 +16,36 @@ class PlayerController extends BaseController
     {
         $this->render('User/Player/index', [
             "title" => "Welkom Timo",
-            "back_button" => false
+            "back_button" => false,
+            "table_number" => 1,
+            "inkoop_ischecked" => true,
+            "rebuy_ischecked" => false,
+            "chips" => [
+                0 => [
+                    "color" => "1",
+                    "value" => 1
+                ],
+                1 => [
+                    "color" => "2",
+                    "value" => 5
+                ],
+                2 => [
+                    "color" => "3",
+                    "value" => 25
+                ],
+                3 => [
+                    "color" => "4",
+                    "value" => 100
+                ],
+                4 => [
+                    "color" => "5",
+                    "value" => 500
+                ],
+                5 => [
+                    "color" => "6",
+                    "value" => 1000
+                ]
+            ]
         ]);
     }
 

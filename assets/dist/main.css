@@ -2447,6 +2447,76 @@ a.text-dark:hover, a.text-dark:focus {
 .text-reset {
   color: inherit !important; }
 
+.bg-primary {
+  background-color: #eb5757 !important; }
+
+a.bg-primary:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: #e62929 !important; }
+
+.bg-secondary {
+  background-color: #6c757d !important; }
+
+a.bg-secondary:hover, a.bg-secondary:focus,
+button.bg-secondary:hover,
+button.bg-secondary:focus {
+  background-color: #545b62 !important; }
+
+.bg-success {
+  background-color: #28a745 !important; }
+
+a.bg-success:hover, a.bg-success:focus,
+button.bg-success:hover,
+button.bg-success:focus {
+  background-color: #1e7e34 !important; }
+
+.bg-info {
+  background-color: #17a2b8 !important; }
+
+a.bg-info:hover, a.bg-info:focus,
+button.bg-info:hover,
+button.bg-info:focus {
+  background-color: #117a8b !important; }
+
+.bg-warning {
+  background-color: #ffc107 !important; }
+
+a.bg-warning:hover, a.bg-warning:focus,
+button.bg-warning:hover,
+button.bg-warning:focus {
+  background-color: #d39e00 !important; }
+
+.bg-danger {
+  background-color: #dc3545 !important; }
+
+a.bg-danger:hover, a.bg-danger:focus,
+button.bg-danger:hover,
+button.bg-danger:focus {
+  background-color: #bd2130 !important; }
+
+.bg-light {
+  background-color: #f8f9fa !important; }
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #dae0e5 !important; }
+
+.bg-dark {
+  background-color: #343a40 !important; }
+
+a.bg-dark:hover, a.bg-dark:focus,
+button.bg-dark:hover,
+button.bg-dark:focus {
+  background-color: #1d2124 !important; }
+
+.bg-white {
+  background-color: #fff !important; }
+
+.bg-transparent {
+  background-color: transparent !important; }
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -4588,7 +4658,7 @@ body, html {
   height: 100%;
   margin: 0; }
 
-h1, h2, p, label, ::placeholder {
+h1, h2, h4, p, label, ::placeholder {
   color: white; }
 
 input[type=text], input[type=email], input[type=password] {
@@ -4705,6 +4775,124 @@ hr {
   border-left: 0px;
   border-right: 0px;
   border-top: 0px; }
+
+.chip-1 {
+  width: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-1 {
+  width: 100%;
+  height: 24px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.chip-2 {
+  width: 25px;
+  height: 25px;
+  background-color: #f83f37;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-2 {
+  width: 100%;
+  height: 24px;
+  background-color: #f83f37;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.chip-3 {
+  width: 25px;
+  height: 25px;
+  background-color: #5ec91b;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-3 {
+  width: 100%;
+  height: 24px;
+  background-color: #5ec91b;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.chip-4 {
+  width: 25px;
+  height: 25px;
+  background-color: #000000;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-4 {
+  width: 100%;
+  height: 24px;
+  background-color: #000000;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.chip-5 {
+  width: 25px;
+  height: 25px;
+  background-color: #ee81f5;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-5 {
+  width: 100%;
+  height: 24px;
+  background-color: #ee81f5;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.chip-6 {
+  width: 25px;
+  height: 25px;
+  background-color: #fce83e;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto; }
+
+.chip-block-6 {
+  width: 100%;
+  height: 24px;
+  background-color: #fce83e;
+  border: 2px solid black;
+  margin-bottom: 1rem; }
+
+.table {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  width: 70%;
+  padding: 50px 0px;
+  background: url("/assets/img/background-primary.jpg");
+  border-radius: 50%; }
+
+.table-seat {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white; }
+  .table-seat p {
+    line-height: 100px; }
 
 @media (max-width: 767.98px) {
   .btn, input[type=text], input[type=email], input[type=password], hr {

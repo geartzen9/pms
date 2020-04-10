@@ -6,7 +6,7 @@ body, html {
     margin: 0;
 }
 
-h1, h2, p, label, ::placeholder {
+h1, h2, h4, p, label, ::placeholder {
     color: white;
 }
 
@@ -103,4 +103,50 @@ hr {
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
+}
+
+@each $color, $value in $chip-colors {
+    .chip-#{$color} {
+        width: 25px;
+        height: 25px;
+        background-color: $value;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: block;
+        margin: 15px auto;
+    }
+
+    .chip-block-#{$color} {
+        width: 100%;
+        height: 24px;
+        background-color: $value;
+        border: 2px solid black;
+        margin-bottom: 1rem;
+    }
+}
+
+.table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    width: 70%;
+    padding: 50px 0px;
+    background: url("/assets/img/background-primary.jpg");
+    border-radius: 50%;
+}
+
+.table-seat {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: $table-seats-size;
+    height: $table-seats-size;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+
+    p {
+        line-height: $table-seats-size;
+    }
 }
