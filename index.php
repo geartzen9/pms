@@ -3,6 +3,8 @@
 use App\Core\Request;
 use App\Core\Router;
 
+session_start();
+
 /*
  * Register the autoloader of composer.
  */

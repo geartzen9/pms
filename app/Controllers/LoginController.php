@@ -52,7 +52,7 @@ class LoginController extends BaseController
                 'email' => $validUser->email
             ]);
 
-            redirect('/');
+            redirect('/test');
             return;
         }
 
@@ -71,7 +71,7 @@ class LoginController extends BaseController
         $user = User::where(['email' => $request['email']])->first();
 
         if ($user !== null) {
-            if (Hash::check($request['password'], $user->password)) {
+            if (password_verify($request['password'], $user->password)) {
                 return $user;
             }
         }
