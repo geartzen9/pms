@@ -11,7 +11,6 @@ $router->get('', 'HomeController@index');
 
 // User routes
 $router->get('login', 'LoginController@index');
-$router->get('register', 'UserController@register');
 
 // Admin routes.
 $router->get('admin', 'AdminController@index');
