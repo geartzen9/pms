@@ -1,6 +1,7 @@
 <?php
 
-use App\Core\Application;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Contracts\Container\Container;
 
 /**
  * Redirect to given path.
@@ -12,21 +13,36 @@ function redirect(string $path)
     header("Location: {$path}");
 }
 
-/**
- * @param string $instance
- * @return mixed
- */
-function resolve(string $instance)
-{
-    return Application::get($instance);
+if (!function_exists('app')) {
+    /**
+     * Get the available container instance.
+     *
+     * @param string|null $abstract
+     * @param array $parameters
+     * @return Container|mixed
+     * @throws BindingResolutionException
+     */
+    function app($abstract = null, array $parameters = [])
+    {
+        if (is_null($abstract)) {
+            return Container::getInstance();
+        }
+
+        return Container::getInstance()->make($abstract, $parameters);
+    }
 }
 
-/**
- * Check if the user is logged in.
- *
- * @return bool
- */
-function userIsLoggedIn(): bool
-{
-    return isset($_SESSION['user']);
+if (!function_exists('resolve')) {
+    /**
+     * Resolve a service from the container.
+     *
+     * @param string $name
+     * @param array $parameters
+     * @return mixed
+     * @throws BindingResolutionException
+     */
+    function resolve($name, array $parameters = [])
+    {
+        return app($name, $parameters);
+    }
 }

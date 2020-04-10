@@ -22,7 +22,7 @@ abstract class BaseController
      */
     public function twig(): Environment
     {
-        $loader = new FilesystemLoader(ROOT_PATH . '/views');
+        $loader = new FilesystemLoader(__DIR__ . '/../../views');
         return new Environment($loader);
     }
 
@@ -36,16 +36,12 @@ abstract class BaseController
     {
         try {
             echo $this->twig()->render("$name.html.twig", $data);
-        } catch (\Exception $e) {
+        } catch (LoaderError $e) {
             echo '<pre>';
             var_dump($e->getMessage());
             die;
-        } catch(LoaderError $e) {
-            die('Something went wrong when loading the page. Try again later...');
         } catch (RuntimeError $e) {
-            die('Something went wrong when loading the page. Try again later...');
         } catch (SyntaxError $e) {
-            die('Something went wrong when loading the page. Try again later...');
         }
     }
 }

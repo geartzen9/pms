@@ -12,3 +12,5 @@ Dit doe je door de volgende commando's uit te voeren in de project map:
 ``composer install`` en daarna ``npm install``
 
 Ga daarna naar `config -> database`, en pas de database instellingen aan naar jou toebehoren.
+
+Om gebruik te maken van migrations voer het volgende commando uit: `php database/migrate.php`

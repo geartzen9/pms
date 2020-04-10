@@ -29,3 +29,5 @@ $router->get('admin/game/remove-player', 'GameController@removePlayer');
 
 // Table route.
 $router->get('table', 'TableController@index');
+
+$router->post('login', 'LoginController@login');

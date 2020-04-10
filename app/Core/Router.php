@@ -3,6 +3,7 @@
 namespace App\Core;
 
 use App\Exceptions\RouteNotFoundException;
+use Illuminate\Container\Container;
 
 /**
  * Class Router
@@ -12,6 +13,9 @@ class Router
 {
     public const ROUTER_TYPE_GET = 'GET';
     public const ROUTER_TYPE_POST = 'POST';
+
+    /** @var Container $app */
+    protected $app = null;
 
     /**
      * All registered routes.
@@ -75,7 +79,7 @@ class Router
             );
         }
 
-        return redirect('/404');
+//        return redirect('/404');
     }
 
     /**
@@ -96,6 +100,6 @@ class Router
             );
         }
 
-        return $controller->$action();
+        return call_user_func([$controller, $action]);
     }
 }

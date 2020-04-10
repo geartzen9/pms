@@ -3,13 +3,17 @@
 use App\Core\Request;
 use App\Core\Router;
 
-session_start();
-
+/*
+ * Register the autoloader of composer.
+ */
 require 'vendor/autoload.php';
-require 'bootstrap/app.php';
-require 'app/Core/helpers.php';
 
-const ROOT_PATH = __DIR__;
+/*
+ * Prepare the application before starting it.
+ */
+$app = require_once 'bootstrap/app.php';
+
+$app->bootstrap();
 
 Router::load('routes/web.php')
     ->direct(Request::uri(), Request::method());
