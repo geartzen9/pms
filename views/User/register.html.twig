@@ -5,13 +5,17 @@
         <div class="row">
             <div class="col-md-12">
                 <img class="mt-5 mx-auto d-block img-fluid logo" src="../assets/img/logo.png" alt="Logo" />
-                <h1 class="text-center font-weight-bold my-4 h2">Inloggen</h1>
+                <h1 class="text-center font-weight-bold my-4 h2">Registreren</h1>
             </div>
         </div>
 
         <div class="row mt-3">
             <div class="col-md-12">
-                <form method="POST" action="/login">
+                <form method="POST" action="/register">
+                    <div class="form-group">
+                        <input name="name" type="text" placeholder="Naam">
+                    </div>
+
                     <div class="form-group">
                         <input name="email" type="email" placeholder="Email">
                     </div>
@@ -20,8 +24,12 @@
                         <input name="password" type="password" placeholder="Wachtwoord">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mx-auto d-block">Inloggen</button>
-                    <a class="pt-3 d-block text-white text-center" href="/register">Nog geen account? Registreer hier!</a>
+                    <div class="form-group">
+                        <input name="password_confirmation" type="password" placeholder="Wachtwoord confirmeren">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mx-auto d-block">Registreren</button>
+                    <a class="pt-3 d-block text-white text-center" href="/login">Al een account? Log je hier in!</a>
                 </form>
             </div>
         </div>
