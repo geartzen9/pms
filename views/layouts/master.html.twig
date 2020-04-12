@@ -5,9 +5,10 @@
     <body class="{% if bg_secondary == true %}bg-img-secondary{% else %}bg-img-primary{% endif %}">
         {% if header is not defined %}
             {% if back_button is not defined %}
-                {% include 'parts/appbar.html.twig' %}
+                {% include 'parts/appbar.html.twig' with {"back_button": true} %}
             {% else %}
-                {% include 'parts/appbar.html.twig' with {"back_button": back_button} %}
+                {% include 'parts/drawer.html.twig' %}
+                {% include 'parts/appbar.html.twig' %}
             {% endif %}
         {% endif %}
         

@@ -2,4 +2,9 @@
     .btn, input[type=text], input[type=email], input[type=password], hr {
         width: 100%;
     }
+
+    .drawer {
+        transform: translateX(-100%);
+        width: 80%;
+    }
 }

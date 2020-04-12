@@ -26,6 +26,7 @@ $router->get('admin/game', 'GameController@index');
 $router->get('admin/game/new', 'GameController@new');
 $router->get('admin/game/add-players', 'GameController@addPlayers');
 $router->get('admin/game/remove-player', 'GameController@removePlayer');
+$router->get('gamerules', 'GameController@gamerules');
 
 // Table route.
 $router->get('table', 'TableController@index');
