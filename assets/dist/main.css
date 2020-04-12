@@ -4766,6 +4766,8 @@ hr {
 
 .navbar-brand {
   line-height: initial; }
+  .navbar-brand i {
+    cursor: pointer; }
 
 .hamburger {
   background-color: transparent;

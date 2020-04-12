@@ -82,6 +82,10 @@ hr {
 
 .navbar-brand {
     line-height: initial;
+
+    i {
+        cursor: pointer;
+    }
 }
 
 .hamburger {
