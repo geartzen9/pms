@@ -4,16 +4,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
+                <div class="table mt-5">
+                    <h1 class="text-center">Tafelnummer:</h1>
+                    <p class="text-center h1">{{ table_number }}</p>
+
+                </div>
+
+                <h2 class="text-center mt-4">Spelers:</h2>
+
                 {% for player in players %}
-                    <div class="table-seat">
+                    <div class="table-seat mt-4 mx-2">
                         <p class="text-center text-dark">{{ player.name }}</p>
                     </div>
                 {% endfor %}
-
-                <div class="table">
-                    <h1 class="text-center">Tafelnummer:</h1>
-                    <p class="text-center h1">{{ table_number }}</p>
-                </div>
             </div>
 
             <div class="col-sm-4">
@@ -44,6 +47,12 @@
                         {% for chip in chips %}
                             <div class="chip-block-{{ chip.color }}"></div>
                         {% endfor %}
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary w-100">Volgende ronde</button>
                     </div>
                 </div>
             </div>
