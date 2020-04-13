@@ -12,8 +12,9 @@ use Twig\Loader\FilesystemLoader;
 /**
  * Class BaseController
  * @package App\Controllers
+ * @author Bryan Smit
  */
-abstract class BaseController
+class BaseController
 {
     /**
      * Get the Twig Environment.
@@ -37,11 +38,11 @@ abstract class BaseController
         try {
             echo $this->twig()->render("$name.html.twig", $data);
         } catch (LoaderError $e) {
-            echo '<pre>';
-            var_dump($e->getMessage());
-            die;
+            redirect('/404');
         } catch (RuntimeError $e) {
+            redirect('/404');
         } catch (SyntaxError $e) {
+            redirect('/404');
         }
     }
 }

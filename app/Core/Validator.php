@@ -2,12 +2,10 @@
 
 namespace App\Core;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
-
 /**
  * Class Validator
  * @package App\Core
+ * @author Bryan Smit
  */
 class Validator
 {

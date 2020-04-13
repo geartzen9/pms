@@ -9,11 +9,11 @@ use Illuminate\Database\Schema\Blueprint;
 ini_set('memory_limit', -1);
 
 /**
- * Class User
+ * Class GameTables
  * @package Database\Migrations
  * @author Bryan Smit
  */
-class User implements Migration
+class GameTables implements Migration
 {
     /**
      * @inheritDoc
@@ -21,19 +21,19 @@ class User implements Migration
     public function run()
     {
         Capsule::schema()->disableForeignKeyConstraints();
-        Capsule::schema()->dropIfExists('users');
+        Capsule::schema()->dropIfExists('game_tables');
 
         Capsule::schema()->enableForeignKeyConstraints();
-        Capsule::schema()->create('users', function (Blueprint $table) {
+        Capsule::schema()->create('game_tables', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('is_admin')
-                ->default(false);
-            $table->unsignedInteger('score')
-                ->default(0);
-            $table->timestamps();
+            $table->unsignedInteger('game_id');
+        });
+
+        Capsule::schema()->table('game_tables', function (Blueprint $table) {
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
+                ->onDelete('cascade');
         });
     }
 }

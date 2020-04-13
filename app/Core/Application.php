@@ -9,6 +9,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 /**
  * Class Application
  * @package App\Core
+ * @author Bryan Smit
  */
 class Application extends Container
 {

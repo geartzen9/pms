@@ -6,6 +6,7 @@ namespace App\Core;
 /**
  * Class Request
  * @package App\Core
+ * @author Bryan Smit
  */
 class Request
 {

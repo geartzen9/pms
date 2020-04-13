@@ -2,12 +2,12 @@
 
 namespace App\Core;
 
-use App\Exceptions\RouteNotFoundException;
 use Illuminate\Container\Container;
 
 /**
  * Class Router
  * @package App\Core
+ * @author Bryan Smit
  */
 class Router
 {

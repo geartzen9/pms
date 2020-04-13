@@ -5,6 +5,7 @@ namespace App\Core;
 /**
  * Class Session
  * @package App\Core
+ * @author Bryan Smit
  */
 class Session
 {
