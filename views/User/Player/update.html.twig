@@ -1,6 +1,7 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
+    {% include "parts/modal.html.twig" with {"modal_title": "Persoon Toevoegen" ,"primary_button_text" : "Persoon Toevoegen","add_person": true} %}
     <div class="container">
         <div class="form-group my-4 mx-auto d-block">
             {% include 'parts/list.html.twig' %}
