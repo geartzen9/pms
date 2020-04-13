@@ -1,7 +1,61 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    <div class="container">
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="table mt-5">
+                    <h1 class="text-center">Tafelnummer:</h1>
+                    <p class="text-center h1">{{ table_number }}</p>
+
+                </div>
+
+                <h2 class="text-center mt-4">Spelers:</h2>
+
+                {% for player in players %}
+                    <div class="table-seat mt-4 mx-2">
+                        <p class="text-center text-dark">{{ player.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-sm-4">
+                <h2 class="my-4">Blinds:</h2>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>- Small Blind:</p>
+                        <p>- Big Blind:</p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <p><b>Waarde:</b> € {{ small_blind_value }},-</p>
+                        <p><b>Waarde:</b> € {{ big_blind_value }},-</p>
+                    </div>
+                </div>
+
+                <h2 class="my-4">Fiches:</h4>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        {% for chip in chips %}
+                            <p>€ {{ chip.value }},-</p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-sm-6">
+                        {% for chip in chips %}
+                            <div class="chip-block-{{ chip.color }}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary w-100">Volgende ronde</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

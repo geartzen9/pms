@@ -29,6 +29,13 @@ class GameController extends BaseController
         ]);
     }
 
+    public function gamerules(): void
+    {
+        $this->render('Game/gamerules', [
+            "title" => "Spelregels"
+        ]);
+    }
+
     /**
      * Render the add players page.
      */

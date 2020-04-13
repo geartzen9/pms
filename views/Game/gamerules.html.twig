@@ -1,0 +1,99 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="font-weight-bold mt-4">Algemeen</h2>
+        <p>
+            Er wordt gespeeld met minimaal twee en maximaal tien spelers aan een tafel en een deck van tweeënvijftig kaarten.
+            Elke ronde krijgt iedere speler twee kaarten die ze voor zichzelf houden.
+            In de loop van de spelronde worden er vijf kaarten open op tafel gelegd die voor iedereen zichtbaar zijn, de speler die overblijft met de beste hand wint.
+        </p>
+        
+        <h2 class="font-weight-bold mt-4">Kaartvolgorde</h2>
+        <p>
+            <b>Onderdeel van poker is begrip van de handranking</b><br><br>
+
+            Dit is een soort van puntentelling om te weten of je een sterke kaart hebt.
+            Iedere speler wil graag de hoogste kaart combinatie in een hand van vijf kaarten, we noemen hier de volgorde van hoog naar laag.
+            Wie aan het einde van een ronde nog in het spel zit en de beste pokerhand heeft is winnaar en krijgt de pot die op tafel ligt.
+        </p>
+        
+        <img class="img-fluid mb-3" src="../assets/img/gamerules/pokerranking.jpg" alt="Pokerranking" />
+        
+        <p>
+            <b>De kaartcombinaties</b><br><br>
+
+            <b>- Royal Flush:</b> aas, koning, vrouw, boer, 10 van gelijk teken is de hoogst mogelijke pokerhand.<br>
+            <b>- Straight Flush:</b> Vijf opeenvolgende kaarten vann gelijke teken. De aas kan zowel voor de twee als na de koning. Bij meerdere straight flush-handen beslist de hoogste kaart.<br>
+            <b>- Four of a kind:</b> Vier gelijkwaardige kaarten in dit geval vier boeren. Een four of a kind-hand is in bijna alle gevallen de winnaar.<br>
+            <b>- Full House:</b> Combinatie van three of a kind en een one pair. Soms komt er in dezelfde ronde twee of meer keer full house op tafel. Dan beslist de hoogste three of a kind, is deze gelijk dan is het pair beslissend.<br>
+            <b>- Flush:</b> Vijf willekeurige kaarten van gelijke teken. Bij twee of meer flush-handen beslist de hoogste kaart, daarna de volgende in de reeks.<br>
+            <b>- Straight:</b> Opeenvolgende kaarten van verschillende tekens. De aas kan voor de twee en na de koning. De laagst mogelijke straat is a-2-3-4-5, de hoogste is 10-j-v-k-a. Bij meerdere straight-handen beslist de hoogste kaart.<br>
+            <b>- Three of a kind:</b> Drie gelijkwaardige kaarten, in dit geval drie koningen. Deze hand is vaak genoeg om de pot te winnen.<br>
+            <b>- Two pair:</b> Verschillende paren. Bij meer two pair-handen is de waarde van het hoogste paar beslissend. Is die gelijk, dan beslist de waarde van het volgende paar of van de vijfde kaart.<br>
+            <b>- One pair:</b> Soms is "een paartje" genoeg om de pot te winnen. Bij gelijke combinaties beslist de hoogte van de volgende kaart.<br>
+            <b>- High card:</b> Vijf verschillende kaarten zonder een combinatie. Eerst kijk je natuurlijk wie de hoogste kaart heeft. Is die gelijk dan beslist de tweede kaart, is die ook gelijk dan gaat het om de waarde van de volgende.
+        </p>
+
+        <h2 class="font-weight-bold mt-4">Spelverloop</h2>
+        <p>
+            Een zogenaamde dealer button geeft aan wie de dealer is.
+            Het inzetten begint met een small blind en een big blind.
+            Dat zijn inzetten die spelers verplicht moeten doen.
+            Vervolgens zet iedereen in de gebruikelijke volgorde in.
+            Als je op internet speelt wordt het delen voor je gedaan en de dealer button getoond aan tafel.<br><br>
+
+            <b>De blinds</b><br><br>
+
+            Voordat we echt beginnen te spelen is de eerste speler links van de dealer verplicht om een vooraf afgesproken bedrag in te zetten (small blind), waarna de speler links van deze small blind op zijn beurt de big blind zet, die in de meeste gevallen twee keer zo hoog is als de small blind.
+            De hoogte hangt af van de gespeelde limiet.
+            Bij online poker gaat het allemaal automatisch.<br><br>
+
+            <b>Eerste inzetronde</b><br><br>
+
+            De speler aan de linkerkant van de big blind is als eerste aan de beurt.
+            Hij heeft drie opties: call, raise of fold.
+            Bij call zet de speler het zelfde bedrag in als de big blind, bij raise zet deze pokerspeler een extra bedrag in.
+            Bij fold is deze ronde voor hem ten einde, je speelt niet meer mee om de pot, maar het kost hem ook geen inzet.
+            Bijkomende optie is re-raise, een extra verhoging na een raise.<br><br>
+
+            <b>Nogmaals de drie opties:</b><br><br>
+
+            <b>- Fold:</b> Je kaarten zijn te slecht om te spelen. Je gooit ze weg (mucken).<br>
+            <b>- Call:</b> Je gaat mee met de inzet van de big blind en hetzelfde aantal fiches in.<br>
+            <b>- Raise:</b> Je verhoogt de inzet en legt dus meer in dan de big blind.<br><br>
+
+            <b>De Flop en de 2e inzetronde</b><br><br>
+
+            Er komen 3 kaarten op tafel die voor iedereen zichtbaar zijn.
+            Deze drie kaarten vormen de flop en elke speler gebruikt ze om samen met z’n handkaarten een combinatie van vijf kaarten te maken.
+            Behalve call, raise of re-raise kun je ook checken.
+            Je mag gratis doorspelen tot de volgende beurt.
+            Als er een inzet voor je is gedaan, kun je callen voor dat bedrag of het bedrag verhogen (raise).<br><br>
+
+            <b>De Turn en de 3e inzetronde</b><br><br>
+
+            Na de tweede inzetronde, wordt de volgende kaart open gelegd.
+            Dit is de turn kaart.
+            Deze kaart is weer een aanvulling op de handkaarten van de spelers om een pokerhand van vijf kaarten te maken.
+            Spelers kunnen weer checken, betten, callen, raisen en natuurlijk folden.<br><br>
+
+            <b>De River en de laatste inzetronde</b><br><br>
+
+            Na de derde inzetronde wordt de vijfde en laatste gemeenschappelijke kaart open gelegd.
+            Dit is de river kaart. Nu volgt de laatste inzetronde. Deze gaat vooraf aan de showdown. Dat is het moment dat iedereen die nog in het spel zit de kaarten moeten openleggen.
+            Winnaar is degene met de hoogste kaart, hij krijgt de pot, bij gelijke kaarten wordt er gedeeld.<br><br>
+
+            <b>Split pot</b><br><br>
+
+            Wanneer er twee dezelfde winnende handen zijn, is het split pot.
+            Kan de pot niet precies worden verdeeld en is er sprake van een overblijvende chip, dan gaat deze naar de speler die de laatste inzet of verhoging heeft gedaan.
+            Is dat ook onbeslist dan gaat de chip naar de speler links van de dealer.<br><br>
+
+            <b>Welke combinaties kan ik het beste spelen?</b><br><br>
+
+            Als je begint met pokeren, is het belangrijk dat je weet met welke kaarten je kan spelen en met welke kaarten je dat absoluut niet moet doen (folden).
+            Beginners spelen vaak veel te veel handen waardoor ze tijdens het spel meerdere malen in de problemen komen en onnodig fiches verliezen.
+        </p>
+    </div>
+{% endblock %}

@@ -14,8 +14,12 @@ class AdminController extends BaseController
      */
     public function index(): void
     {
+        $display_name = "Timo";
+
         $this->render('User/Admin/index', [
-            "title" => "Welkom Timo",
+            "title" => "Welkom " . $display_name,
+            'display_name' => $display_name,
+            'email' => "timo@tres.nl",
             "back_button" => false
         ]);
     }
