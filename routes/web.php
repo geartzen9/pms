@@ -33,3 +33,5 @@ $router->get('table', 'TableController@index');
 
 $router->post('login', 'LoginController@login');
 $router->post('register', 'RegistrationController@register');
+
+$router->post('player/disable', 'PlayerController@disablePlayer');

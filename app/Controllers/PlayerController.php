@@ -3,6 +3,9 @@
 
 namespace App\Controllers;
 
+use App\Core\Request;
+use App\Models\GamePlayer;
+
 /**
  * Class PlayerController
  * @package App\Controllers
@@ -145,5 +148,23 @@ class PlayerController extends BaseController
                 ]
             ]
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function disablePlayer(): void
+    {
+        $request = [
+            'user_id' => Request::post('user_id'),
+            'game_id' => Request::post('game_id')
+        ];
+
+        /** @var GamePlayer $gamePlayer */
+        $gamePlayer = GamePlayer::where('user_id', $request['user_id'])
+            ->andWhere('game_id', $request['game_id'])
+            ->one();
+
+        $gamePlayer->setBroke(false);
     }
 }
