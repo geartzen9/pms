@@ -35,3 +35,6 @@ $router->post('register', 'RegistrationController@register');
 
 $router->post('player/disable', 'PlayerController@disablePlayer');
 $router->post('player/rebought', 'PlayerController@rebought');
+
+$router->post('admin/game/new', 'GameController@startGame');
+$router->post('/admin/game/add-players', 'GameController@submitPlayers');

@@ -1,92 +1,87 @@
 {% extends 'layouts/master.html.twig' %}
 
 {% block content %}
-    <div class="container">
-        <div class="row mt-1">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Inleg voor de pot:</p>
-                <input type="text" placeholder="Inleg voor de pot">
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-10 text-center">
+                <form method="post" action="/admin/game/new">
+                    <h1 class="text-center font-weight-bold my-4 h2">Instellingen</h1>
+                    <hr>
+
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Inleg voor de pot:</p>
+                        <input type="text" name="investment" placeholder="Inleg voor de pot" required>
+                    </div>
+                
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Hoeveelheid tafels:</p>
+                        <input type="text" name="table_count" placeholder="Hoeveelheid tafels" required>
+                    </div>
+
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Naam van het spel:</p>
+                        <input type="text" name="name" placeholder="Naam" required>
+                    </div>
+                    
+                    <hr>
+                    <h1 class="text-center font-weight-bold my-4 h2">Waarden van fiches</h1>
+                    <hr>
+                
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Wit:</p>
+                        <input type="text" name="chip_white" placeholder="Wit" required>
+                    </div>
+                    
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Rood:</p>
+                        <input type="text" name="chip_red" placeholder="Rood" required>
+                    </div>
+                    
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Blauw:</p>
+                        <input type="text" name="chip_blue" placeholder="Blauw" required>
+                    </div>
+
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Groen:</p>
+                        <input type="text" name="chip_green" placeholder="Groen" required>
+                    </div>
+
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Zwart:</p>
+                        <input type="text" name="chip_black" placeholder="Zwart" required>
+                    </div>
+                
+                    <hr>
+                    <h1 class="text-center font-weight-bold my-4 h2">Blinds</h1>
+                    <hr>
+                    
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Waarde Small Blind:</p>
+                        <input type="text" name="blind_small_value" placeholder="Waarde Small Blind" required>
+                    </div>
+                
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Waarde Big Blind:</p>
+                        <input type="text" name="blind_big_value" placeholder="Waarde Big Blind" required>
+                    </div>
+                
+                    <div class="form-group my-4 mx-auto d-block">
+                        <p>Stapgrootte:</p>
+                        <input type="text" name="blind_step_value" placeholder="Stapgrootte" required>
+                    </div>
+
+                    <hr>
+                    <h1 class="text-center font-weight-bold my-4 h2">Voeg spelers toe</h1>
+                    <button class="btn btn-primary mx-auto d-block">Spelers toevoegen</button>
+
+                    <hr>
+                    <h1 class="text-center font-weight-bold my-4 h2">Start toernooi</h1>
+                    <button type="submit" class="btn btn-primary mx-auto d-block">Toernooi starten</button>
+                </form>
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Hoeveelheid tafels:</p>
-                <input type="text" placeholder="Hoeveelheid tafels">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-        <div class="form-group my-4 mx-auto d-block">
-                <h1 class="text-center font-weight-bold my-4 h2">Waarde fiches</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Wit:</p>
-                <input type="text" placeholder="Wit">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Rood:</p>
-                <input type="text" placeholder="Rood">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Groen:</p>
-                <input type="text" placeholder="Groen">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Zwart:</p>
-                <input type="text" placeholder="Zwart">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Roze:</p>
-                <input type="text" placeholder="Roze">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Geel:</p>
-                <input type="text" placeholder="Geel">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-        <div class="form-group my-4 mx-auto d-block">
-                <h1 class="text-center font-weight-bold my-4 h2">Blinds</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Waarde Small Blind:</p>
-                <input type="text" placeholder="Waarde Small Blind">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Waarde Big Blind:</p>
-                <input type="text" placeholder="Waarde Big Blind">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group my-4 mx-auto d-block">
-                <p>Stapgrootte:</p>
-                <input type="text" placeholder="Stapgrootte">
-            </div>
-        </div>
-        <hr>
-        <p class="text-center">Hoeveelheid spelers die meedoen:</p>
-        <div class="row">
-        <a class="btn btn-primary mx-auto d-block" href="/admin/game/add-players">Spelers toevoegen</a>
-        </div>
-        <hr>
-        <button class="btn btn-primary mx-auto d-block">Toernooi starten</button>
+        </div> 
     </div>
 
 {% endblock %}
