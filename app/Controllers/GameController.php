@@ -2,6 +2,9 @@
 
 
 namespace App\Controllers;
+use App\Core\Request;
+use App\Models\User;
+use App\Models\Game;
 
 /**
  * Class GameController
@@ -29,6 +32,33 @@ class GameController extends BaseController
         ]);
     }
 
+    public function startGame(): void
+    {
+        $game = new Game;
+        $game->name = Request::post('name');
+        $game->amount_of_tables = Request::post('table_count');
+        $game->settings = [
+            "investment" => Request::post('investment'),
+            "chips" => [
+                "white" => Request::post('chip_white'),
+                "red" => Request::post('chip_red'),
+                "blue" => Request::post('chip_blue'),
+                "green" => Request::post('chip_green'),
+                "black" => Request::post('chip_black')
+            ],
+            "blinds" => [
+                "small" => Request::post('blind_small_value'),
+                "big" => Request::post('blind_big_value'),
+                "step_size" => Request::post('blind_step_value')
+            ]
+        ];
+
+        $game->save();
+        
+        redirect("/admin/game/add-players");
+        return;
+    }
+
     public function gamerules(): void
     {
         $this->render('Game/gamerules', [
@@ -41,46 +71,17 @@ class GameController extends BaseController
      */
     public function addPlayers(): void
     {
+        $users = User::orderBy('name', 'asc')->get();
+
         $this->render('Game/add-players', [
             "title" => "Personen toevoegen",
-            "users" => [
-                0 => [
-                    "name" => "Harmen",
-                    "ranking" => 1,
-                    "score" => 100
-                ],
-                1 => [
-                    "name" => "Marco",
-                    "ranking" => 2,
-                    "score" => 80
-                ],
-                2 => [
-                    "name" => "Welmoed",
-                    "ranking" => 3,
-                    "score" => 75
-                ],
-                3 => [
-                    "name" => "Peter",
-                    "ranking" => 4,
-                    "score" => 50
-                ],
-                4 => [
-                    "name" => "Timo",
-                    "ranking" => 5,
-                    "score" => 40
-                ],
-                5 => [
-                    "name" => "Pieter",
-                    "ranking" => 6,
-                    "score" => 25
-                ],
-                6 => [
-                    "name" => "Marjan",
-                    "ranking" => 7,
-                    "score" => 20
-                ]
-            ]
+            "users" => $users
         ]);
+    }
+
+    public function submitPlayers(): void
+    {
+        var_dump(Request::post('name'));die;
     }
 
     /**

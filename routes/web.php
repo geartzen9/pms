@@ -33,3 +33,6 @@ $router->get('table', 'TableController@index');
 
 $router->post('login', 'LoginController@login');
 $router->post('register', 'RegistrationController@register');
+
+$router->post('admin/game/new', 'GameController@startGame');
+$router->post('/admin/game/add-players', 'GameController@submitPlayers');
