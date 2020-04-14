@@ -13,50 +13,6 @@ use App\Models\GamePlayer;
 class PlayerController extends BaseController
 {
     /**
-     * Render the dashboard page.
-     */
-    public function index(): void
-    {
-        $display_name = "Timo";
-
-        $this->render('User/Player/index', [
-            "title" => "Welkom " . $display_name,
-            'display_name' => $display_name,
-            'email' => "timo@tres.nl",
-            "back_button" => false,
-            "table_number" => 1,
-            "inkoop_ischecked" => true,
-            "rebuy_ischecked" => false,
-            "chips" => [
-                0 => [
-                    "color" => "1",
-                    "value" => 1
-                ],
-                1 => [
-                    "color" => "2",
-                    "value" => 5
-                ],
-                2 => [
-                    "color" => "3",
-                    "value" => 25
-                ],
-                3 => [
-                    "color" => "4",
-                    "value" => 100
-                ],
-                4 => [
-                    "color" => "5",
-                    "value" => 500
-                ],
-                5 => [
-                    "color" => "6",
-                    "value" => 1000
-                ]
-            ]
-        ]);
-    }
-
-    /**
      * Render the purchase and rebuy page.
      */
     public function update(): void
