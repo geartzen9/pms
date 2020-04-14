@@ -34,10 +34,7 @@ class GameController extends BaseController
 
     public function startGame(): void
     {
-        $game = new Game;
-        $game->name = Request::post('name');
-        $game->amount_of_tables = Request::post('table_count');
-        $game->settings = [
+        $settings = [
             "investment" => Request::post('investment'),
             "chips" => [
                 "white" => Request::post('chip_white'),
@@ -52,6 +49,11 @@ class GameController extends BaseController
                 "step_size" => Request::post('blind_step_value')
             ]
         ];
+
+        $game = new Game;
+        $game->name = Request::post('name');
+        $game->amount_of_tables = Request::post('table_count');
+        $game->settings = json_encode($settings);
 
         $game->save();
         
@@ -75,13 +77,13 @@ class GameController extends BaseController
 
         $this->render('Game/add-players', [
             "title" => "Personen toevoegen",
-            "users" => $users
+            "users" => $users,
         ]);
     }
 
     public function submitPlayers(): void
     {
-        var_dump(Request::post('name'));die;
+        var_dump(Request::post('player'));die;
     }
 
     /**
