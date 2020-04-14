@@ -4991,7 +4991,11 @@ hr {
     opacity: 1; }
 
 @media (max-width: 767.98px) {
-  .btn, input[type=text], input[type=email], input[type=password], hr {
+  .btn, .form-group {
+    width: 85%; }
+  hr {
+    width: 90%; }
+  input[type=text], input[type=email], input[type=password] {
     width: 100%; }
   .drawer {
     transform: translateX(-100%);
