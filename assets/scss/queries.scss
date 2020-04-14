@@ -1,5 +1,13 @@
 @include media-breakpoint-down(sm) {
-    .btn, input[type=text], input[type=email], input[type=password], hr {
+    .btn, .form-group {
+        width: 85%;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    input[type=text], input[type=email], input[type=password] {
         width: 100%;
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\Session;
+use App\Models\User;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Container\Container;
 
@@ -44,5 +46,17 @@ if (!function_exists('resolve')) {
     function resolve($name, array $parameters = [])
     {
         return app($name, $parameters);
+    }
+}
+
+if (!function_exists('authenticated')) {
+    /**
+     * Get the authenticated user.
+     *
+     * @return User|null
+     */
+    function authenticated()
+    {
+        return !empty(Session::get('user')) ? User::find(Session::get('user')['id']) : null;
     }
 }

@@ -54,7 +54,7 @@ class LoginController extends BaseController
                 'email' => $validUser->email
             ]);
 
-            redirect('/test');
+            redirect('/');
             return;
         }
 

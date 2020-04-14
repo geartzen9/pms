@@ -3,56 +3,15 @@
 
 namespace App\Controllers;
 
+use App\Core\Request;
+use App\Models\GamePlayer;
+
 /**
  * Class PlayerController
  * @package App\Controllers
  */
 class PlayerController extends BaseController
 {
-    /**
-     * Render the dashboard page.
-     */
-    public function index(): void
-    {
-        $display_name = "Timo";
-
-        $this->render('User/Player/index', [
-            "title" => "Welkom " . $display_name,
-            'display_name' => $display_name,
-            'email' => "timo@tres.nl",
-            "back_button" => false,
-            "table_number" => 1,
-            "inkoop_ischecked" => true,
-            "rebuy_ischecked" => false,
-            "chips" => [
-                0 => [
-                    "color" => "1",
-                    "value" => 1
-                ],
-                1 => [
-                    "color" => "2",
-                    "value" => 5
-                ],
-                2 => [
-                    "color" => "3",
-                    "value" => 25
-                ],
-                3 => [
-                    "color" => "4",
-                    "value" => 100
-                ],
-                4 => [
-                    "color" => "5",
-                    "value" => 500
-                ],
-                5 => [
-                    "color" => "6",
-                    "value" => 1000
-                ]
-            ]
-        ]);
-    }
-
     /**
      * Render the purchase and rebuy page.
      */
@@ -145,5 +104,35 @@ class PlayerController extends BaseController
                 ]
             ]
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function disablePlayer(): void
+    {
+        $request = [
+            'user_id' => Request::post('user_id'),
+            'game_id' => Request::post('game_id')
+        ];
+
+        /** @var GamePlayer $gamePlayer */
+        $gamePlayer = GamePlayer::where('user_id', $request['user_id'])
+            ->andWhere('game_id', $request['game_id'])
+            ->one();
+
+        $gamePlayer->setBroke(true);
+    }
+
+    public function rebought()
+    {
+        $request = [
+            'game_player_id' => Request::post('game_player')
+        ];
+
+        /** @var GamePlayer $gamePlayer */
+        $gamePlayer = GamePlayer::find($request['game_player_id']);
+
+        $gamePlayer->setRebought(true);
     }
 }
