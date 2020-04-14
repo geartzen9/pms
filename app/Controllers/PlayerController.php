@@ -165,6 +165,18 @@ class PlayerController extends BaseController
             ->andWhere('game_id', $request['game_id'])
             ->one();
 
-        $gamePlayer->setBroke(false);
+        $gamePlayer->setBroke(true);
+    }
+
+    public function rebought()
+    {
+        $request = [
+            'game_player_id' => Request::post('game_player')
+        ];
+
+        /** @var GamePlayer $gamePlayer */
+        $gamePlayer = GamePlayer::find($request['game_player_id']);
+
+        $gamePlayer->setRebought(true);
     }
 }

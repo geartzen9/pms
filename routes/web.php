@@ -35,3 +35,4 @@ $router->post('login', 'LoginController@login');
 $router->post('register', 'RegistrationController@register');
 
 $router->post('player/disable', 'PlayerController@disablePlayer');
+$router->post('player/rebought', 'PlayerController@rebought');

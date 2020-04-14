@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
 class GamePlayer extends Model
 {
     /**
+     * Set a player's broke state.
+     *
      * @param bool $broke
      * @return void
      */
@@ -19,6 +21,19 @@ class GamePlayer extends Model
     {
         static::update([
             'is_broke' => true
+        ]);
+    }
+
+    /**
+     * Set e player's rebought state.
+     *
+     * @param bool $rebought
+     * @return void
+     */
+    public function setRebought(bool $rebought): void
+    {
+        static::update([
+            'has_rebought' => $rebought
         ]);
     }
 }
